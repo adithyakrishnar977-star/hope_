@@ -12,13 +12,16 @@
         display:flex;
         justify-content: flex-end;
     }
+    .btn-primary{
+        border-radius: 20px;
+    }
 </style>
 
 <div class="container">
     <div class="page-layout chat-page">
         <div class="chat-card mx-auto">
             <div class="chat-head d-flex align-items-center gap-3">
-                <div class="chat-dp">
+                <!-- <div class="chat-dp">
                     <img src="{{ auth()->user()->pfp
                                         ? asset('storage/' . auth()->user()->pfp)
                                         : asset('images/20180125_001_1_.jpg') }}"
@@ -26,7 +29,7 @@
                 </div>
                 <div class="chat-name">
                     <h2>{{ auth()->user()->name }}</h2>
-                </div>
+                </div> -->
             </div>
             <div id="chat-box" style="border:1px solid #ccc; padding:15px; height:400px; overflow-y:scroll;">
                 <!-- Messages load here -->
@@ -39,9 +42,9 @@
         
                 <div class="chat-low d-flex justify-content-between align-items-center gap-3">
                     <div class="chat-msg">
-                        <input type="text" id="chat_content" class="form-control" placeholder="Type message..." required>
+                        <input type="text" id="chat_content" class="form-control ms-3" placeholder="Type message..." required>
                     </div>
-                    <button type="submit" class="btn-primary">Send</button>
+                    <button type="submit" class="btn-primary ms-4 me-4">Send</button>
                 </div>
             </form>
         </div>
