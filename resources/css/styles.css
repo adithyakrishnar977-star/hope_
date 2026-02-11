@@ -1,0 +1,1026 @@
+
+/* Fonts */
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../public/fonts/Montserrat-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../public/fonts/Montserrat-Medium.ttf");
+    font-weight:500;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../public/fonts/Montserrat-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../public/fonts/Montserrat-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../../public/fonts/Poppins-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../../public/fonts/Poppins-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../../public/fonts/Poppins-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../../public/fonts/Poppins-Bold.ttf");
+    font-weight: 700;
+}
+
+/* colors */
+
+:root{
+    --primary : #0F2854;
+    --secondary : #49494f;
+    --white : #ffffff;
+    --black : #000;
+    --navyblue : #1C4D8D;
+    --lightblue : #4988C4;
+    --seablue : #BDE8F5;  
+    --beige : #F2EDE2 ;
+    --sec2 : #BACBD8;
+
+
+ /* font */
+    --xsmall : 10px;
+    --small : 12px;
+    --default : 13px;
+    --normal : 16px;
+    --large : 20px;
+}
+
+
+body{
+    margin: 0;
+    font-size: var(--default);
+    font-family: Poppins;
+    font-weight: 400;
+    background-color: #f8f8f8;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+h1{
+    font-size: var(--large);
+    line-height: 28px;
+    color: var(--primary);
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.btn-primary{
+    padding: 16px 25px;
+    font-size: var(--normal);
+    line-height: 24px;
+    color: var(--seablue);
+    font-family: "Montserrat";
+    font-weight: 600;
+    background-color: var(--navyblue);
+    border: 2px solid var(--navyblue);
+    transition: 0.3s;
+    min-width: 200px;
+}
+
+.btn-primary:disabled{
+    background-color: var(--navyblue);
+    border-color: var(--navyblue);
+}
+
+.btn-primary:hover{
+    background-color: var(--white);
+    color: var(--navyblue);
+    transition: 0.3s;
+}
+
+.btn-secondary{
+    padding: 16px 25px;
+    font-size: var(--normal);
+    line-height: 24px;
+    color: var(--seablue);
+    font-family: "Montserrat";
+    font-weight: 600;
+    background-color: var(--navyblue);
+    border: 2px solid var(--navyblue);
+    transition: 0.3s;
+}
+
+.btn-secondary:hover{
+    background-color: var(--white);
+    color: var(--navyblue);
+    transition: 0.3s;
+}
+
+.form-label{
+    font-size: var(--normal);
+    line-height: 24px;
+    color: var(--primary);
+    font-family: "Poppins";
+    font-weight: 500;
+}
+
+.form-control{
+    font-size: var(--default);
+    line-height: 18px;
+    color: var(--secondary);
+    font-family: "Poppins";
+    font-weight: 400;
+    box-shadow: none;
+    padding: 18px 15px;
+    border-radius: 10px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border-color: var(--navyblue);
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.head-1{
+    color: var(--primary);
+}
+
+.head-1 h4{
+    color: var(--primary);
+}
+
+.login-inner{
+    padding: 50px 50px 50px 100px;
+    border-radius: 30px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #BACBD8;
+}
+
+
+.login-image{
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-image img{
+    object-fit: cover;
+}
+
+.login-container .login-inner form{
+    margin-top: 55px;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.login-container .login-inner .validity{
+    color: red;
+    font-size: var(--normal);
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.login-image h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+.login-image::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.reg-container{
+    height: 100vh;
+}
+.right{
+    height: 100%;
+}
+
+.bgimg{
+    position: relative;
+}
+
+.bgimg::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.bgimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+
+.bgimg h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+
+
+.register .left{
+    padding: 0;
+}
+
+
+
+
+.right{
+    background-color: #BACBD8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.right form{
+    width: 100%;
+    max-width: 900px;
+}
+
+.therapistdet{
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    gap:10px;
+}
+
+.right .regbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--beige);
+}
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    height: 120px;
+    
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    filter: invert(1);
+}
+
+.formcontain h1{
+    font-size: 30px;
+    font-family: "Poppins";
+    color: var(--primary);
+}
+
+header .navbar{
+    font-size: var(--large);
+    font-family: "Poppins";
+    font-weight: 600;
+}
+
+.navbar{
+    background-color: var(--primary);
+}
+
+.profimg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.btn.logout{
+    filter: brightness(100);
+}
+
+.navbar a, .navbar span, .navbar h1{
+    color: var(--white);
+}
+
+header .navbar .collapse .navbar-nav .nav-item .nav-link{
+    color: var(--white);
+
+
+}
+
+
+
+header .navbar .collapse .navbar-nav .nav-item .nav-link{
+    position: relative;
+    transition: 0.3s;
+}
+
+header .navbar .collapse .navbar-nav .nav-item .nav-link::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    transition:0.3s ;
+
+}
+
+header .navbar .collapse .navbar-nav .nav-item .nav-link:hover::after , header .navbar .collapse .navbar-nav .nav-item .nav-link.active::after{
+    width: 100%;
+}
+
+header .navbar .collapse .navbar-nav{
+    padding: 10px 20px;
+}
+
+.page-title h1{
+    color: var(--primary);
+    font-family: "Montserrat";
+    font-size: 35px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+/* CARD */
+
+
+
+.cardparent{
+    background-color: var(--beige);
+    border-radius: 20px;
+    padding: 20px 20px;
+    height: 100%;
+    position: relative;
+}
+
+.cardparent .navigate{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.dp{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+.dp img{
+    height: 100%;
+    width: 100%;
+}
+
+.upper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.midin{
+    padding: 5px;
+    
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+.mid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mid .midin .content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mid .midin .content p{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    
+}
+.mid .midin .content  p:first-child{
+
+    color: gray;
+}
+
+.mid .midin .content  p:nth-child(2){
+    font-weight: 600;
+}
+
+.lower div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.lower{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.active{
+    position: relative; 
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(194, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    right:2px;
+    bottom: 15px;
+}
+.main{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.white .mid,.lower{
+    padding-top: 0;
+}
+.white{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 15px;
+
+}
+
+.page-layout{
+    padding: 100px 0px;
+}
+
+.upper .name h6{
+    color:grey;
+}
+.upper .name h4{
+    font-family: "Montserrat";
+}
+
+
+/* CARD */
+
+
+
+
+
+
+
+
+
+
+
+.detail-card{
+    background-color: var(--beige);
+    border-radius: 30px;
+    padding: 30px;
+
+}
+
+
+
+.pic{
+ flex: 0 0 150px;
+ height: 150px;
+ overflow: hidden;
+ border-radius: 50%;
+ border: 1px solid;
+
+
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pic-det{
+    border-top: 2px solid #000;
+}
+.pic-det .info h5{
+    color: #808080;
+
+}
+.pic-det .info{
+    padding-top: 70px;
+}
+
+.infopage-layout{
+    padding: 20px 0 100px 0;
+}
+
+.page-layout .table-info table thead th{
+    border: 0;
+    border-right: 2px solid #ffffff;
+    padding: 15px;
+    font-family: "Montserrat";
+    color: var(--white);
+    font-size: 17px;
+    line-height: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.page-layout .table-info table thead th:first-child{
+    border-left: 2px solid transparent;
+    border-top-left-radius: 10px;
+}
+
+.page-layout .table-info table thead th:last-child{
+    border-right: 2px solid transparent;
+    border-top-right-radius: 10px;
+}
+
+.page-layout .table-info table tbody tr:nth-child(even) td{
+    background-color: var(--beige);
+}
+
+.page-layout .table-info table tbody tr td{
+    border: 0px;
+    padding: 15px;
+    background-color: var(--white);
+    font-family: "Poppins";
+    color: #000;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.page-layout .table-info table tbody tr td:first-child{
+    border-left: 0;
+    border-bottom-left-radius: 10px;
+}
+.page-layout .table-info table tbody tr td:last-child{
+    border-right: 0;
+    border-bottom-right-radius: 10px;
+}
+
+.page-layout .table-info thead{
+    background-color: var(--primary);
+}
+
+.page-layout table{
+    width: 100%;
+
+}
+
+
+
+
+.disabledbtn{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chat-card{
+    max-width: 800px;
+    max-height: 100%;
+    height: 100%;
+    background-color: var(--beige);
+    border: 1px solid;
+    border-radius: 10px;
+
+}
+
+.page-layout.chat-page{
+    height: calc(100vh - 139px);
+}
+
+.chat-card .chat-head{
+    background-color: var(--primary);
+    padding: 15px;
+    border-bottom: 1px solid;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;   
+}
+
+.chat-card .chat-head .chat-dp{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+}
+.chat-card .chat-head .chat-dp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.chat-head .chat-name h2{
+    font-size: 20px;
+    font-family: "Montserrat";
+    line-height: 30px;
+    color: var(--white);
+}
+
+.chat-wrap{
+    padding: 15px;
+    height: calc(100% - 81px);
+    display: flex;
+    flex-direction: column;
+}
+.chat-mid{
+    flex: 1;
+    overflow: auto;
+}
+
+.chat-low{
+    margin-top: 20px;
+}
+
+.chat-low .chat-msg h6{
+    opacity: 0.5;
+    color: #808088;
+}
+
+
+.chat-low .chat-msg{
+    flex: 1;
+
+}
+.chat-low .chat-msg textarea{
+    width: 100%;
+    border: 1px;
+    border-radius:5px;
+    padding: 7px;
+}
+
+.chat-low  .send-btn{
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.chat-low .send-btn img{
+    height: 30px;
+    width: 30px;
+    filter: brightness(100);
+}
+
+
+.page-layout .page-title h1{
+    position: relative;
+    
+}
+.page-layout .page-title h1::after{
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 5px;
+    background-color: var(--primary);
+
+}
+
+
+.page-layout .btn-back{
+    font-size: 15px;
+    line-height: 22px;  
+    font-family: "Montserrat";
+    background-color: var(--primary);
+    border-radius: 6px;
+    color: var(--white);
+    padding: 12px 19px;
+    transition: 0.3s;
+}
+
+.page-layout .btn-back:hover{
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    transition: 0.3s;
+}
+
+.detail-card .det-upper .msg-button{
+    display: flex;
+    justify-content: end;
+}
+
+.det-upper .name-head h6{
+    font-size: 20px;
+    font-family: "Montserrat";
+    line-height: 27px;
+    font-weight: 600;
+    flex: 0 0 100px;
+    text-align: end;
+}
+
+.det-upper .name-head span{
+    font-size: 20px;
+    font-family: "Poppins";
+    line-height: 27px;
+
+}
+
+.bor-der .info h2{
+    font-family: "Montserrat";
+    font-size: 27px;
+    line-height: 33px;
+}
+.bor-der .info h5{
+    font-family: "Poppins";
+    font-family: 25px;
+    line-height: 32px;
+    color: #808080;
+}
+
+.alert {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: center;
+}
+
+
+
+.profile-card{
+    background-color: var(--beige);
+    border-radius: 30px;
+    position: relative;
+}
+
+.profile-card .edit{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+
+
+
+.profile-card .profile-upp .profile-pfp{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+
+.profile-card .profile-upp .profile-pfp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card .profile-upp h2{
+    color: var(--primary);
+    font-size: 20px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    line-height: 27px;
+}
+
+.profile-card .profile-upp h5{
+    color: #808080;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.profile-card .profile-dets{
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 30px;
+}
+
+
+.profile-dets .info-wrap span:first-child{
+    flex: 0 0 250px;
+    text-align: end;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.profile-card .profile-dets span{
+    font-size: 16px;
+    color: var(--primary);
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.note{
+    font-size: 15px;
+    line-height: 23px;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.accept-btn{
+    margin: 24px -8px 0;
+}
+
+.accept-btn .button-control{
+    flex: 0 0 33.333%;
+    padding: 0 8px;
+}
+
+.accept-btn .button-control button{
+    width: 100%;
+    border-radius: 30px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    transition: 0.3s;
+}
+
+.accept-btn .button-control .btn-success:hover{
+    background-color: var(--white);
+    border: 1px solid green;
+    color: green;
+    transition: 0.3s;
+}
+
+.accept-btn .button-control .btn-danger:hover{
+    background-color: var(--white);
+    border: 1px solid red;
+    color: red;
+    transition: 0.3s;
+}
+
+.accept-btn .button-control .btn-dark{
+    background-color: var(--navyblue);
+    border: 0;
+}
+
+.accept-btn .button-control .btn-dark:hover{
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    transition: 0.3s;
+}
+
+.modal-dialog.modal-dialog-centered{
+    max-width: 600px;
+}
+.modal-content{
+    border-radius: 30px;
+}
+
+.modal-content .modal-header.page-title{
+    border-bottom: 0;
+    padding: 30px 50px;
+}
+
+.modal-content .modal-header.page-title h1{
+    font-size: 25px;
+    line-height: 32px;
+}
+
+.modal-content .modal-body{
+    padding: 0 50px 50px;
+}
+
+.chat-wrap .chat-mid .msg-content{
+    font-size: 14px;
+    font-family: "Poppins";
+    line-height: 20px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 7px;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+.chat-wrap .chat-mid .msg-content.from-msg{
+    background-color: var(--navyblue);
+    color: var(--white);
+    margin-left: auto;
+}
+
+.chat-wrap .chat-mid .msg-content.to-msg{
+    background-color: var(--white);
+    color: var(--black);
+    margin-right: auto;
+}
+
+.admin-control .nav-pills .nav-item .nav-link{
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    background-color: var(--white);
+    color: var(--primary);
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 1px solid var(--primary);
+    padding: 9px 35px ;
+
+}
+
+.admin-control .nav-pills .nav-item .nav-link:hover , .admin-control .nav-pills .nav-item .nav-link.active{
+    background-color: var(--navyblue);
+    color: var(--white);
+    border: 1px solid var(--navyblue);
+    transition: 0.3s;
+}
+
+
+.admin-control .table-info .table-pfp{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.admin-control .table-info .table-pfp img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
