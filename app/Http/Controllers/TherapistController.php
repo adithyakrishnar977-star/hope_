@@ -16,6 +16,7 @@ class TherapistController extends Controller
             ->join('users as t', 'a.therapist_id', '=', 't.id')
             ->select(
                 'a.*',
+                'p.id as patient_id',
                 'p.name as patient_name',
                 'p.role as patient_role',
                 'p.pfp as patient_pic',
@@ -47,6 +48,6 @@ class TherapistController extends Controller
             ->get();   
             // echo '<pre>';
             // print_r($activeRequests);
-        return view('therapist.dashboard',compact('activeRequests','upcomingSessions'));
+        return view('therapist.dashboard',compact('activeRequests','upcomingSessions', 'userId'));
     }
 }

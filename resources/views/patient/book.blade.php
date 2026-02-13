@@ -12,6 +12,13 @@
     </div>
 @endif
 
+<style>
+    .disabled {
+        pointer-events: none;
+        opacity: 0.6;
+    }
+</style>
+
     <div class="container">
         <div class="page-layout">
             <div class="back-btn pb-5">
@@ -54,7 +61,12 @@
 
                         </div>
                         <div class="msg-button">
-                            <button type="button" class="btn-primary rounded-pill" disabled>Message Therapist</button>
+                           @if($latestAppointmentscount === 0 || $latestAppointments->status!=1)
+                           <button type="button" class="btn-primary rounded-pill disabled" disabled>Message Therapist</button>
+                                
+                            @else
+                                <button type="button" class="btn-primary rounded-pill"><a href="{{ route('chat.index', ['therapist' => $id, 'patient' => $userId]) }}" class="text-white text-decoration-none">Message Therapist</a></button>
+                            @endif
                         </div>
                     </div>
                 

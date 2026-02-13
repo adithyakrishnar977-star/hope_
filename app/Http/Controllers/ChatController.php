@@ -4,23 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Chat;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ChatController extends Controller
 {
    public function index($therapist, $patient)
     {
-        return view('chat.chat', compact('therapist', 'patient'));
+         $role = auth()->user()->role;
+        if($role=='therapist'){
+            $chatUser = User::findOrFail($patient);
+
+        }elseif($role=='patient'){
+            $chatUser = User::findOrFail($therapist);
+        }
+        return view('chat.chat', compact('therapist', 'patient', 'chatUser'));
     }
 
     // Fetch messages (AJAX)
     public function fetchMessages($therapist, $patient)
     {
+       
         
-        $messages = Chat::where('therapist_id', $therapist)
-                        ->where('patient_id', $patient)
-                        ->orderBy('created_at', 'asc')
-                        ->get();
+        // $messages = Chat::where('therapist_id', $therapist)
+        //                 ->where('patient_id', $patient)
+        //                 ->orderBy('created_at', 'asc')
+        //                 ->get();
+
+        $messages = DB::table('chats as c')
+            ->join('users as p', 'c.patient_id', '=', 'p.id')
+            ->join('users as t', 'c.therapist_id', '=', 't.id')
+            ->select(
+                'c.*',                
+                'p.name as patient_name',
+                't.name as therapist_name',
+            )
+           ->where('patient_id', $patient)
+           ->where('therapist_id', $therapist)            
+            ->orderBy('created_at', 'asc')
+            ->get();   
 
                         
 

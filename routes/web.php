@@ -61,7 +61,7 @@ Route::middleware(['auth', 'role:therapist'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     // Route::get('/chat', [ChatController::class, 'index'])
     //     ->name('chat.chat');
-    Route::get('/chat/{therapist}/{patient}', [ChatController::class, 'index']);
+    Route::get('/chat/{therapist}/{patient}', [ChatController::class, 'index'])->name('chat.index');
     Route::get('/chat/messages/{therapist}/{patient}', [ChatController::class, 'fetchMessages'])->name('chat.fetch');
     Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 ;

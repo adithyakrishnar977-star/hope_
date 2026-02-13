@@ -21,15 +21,15 @@
     <div class="page-layout chat-page">
         <div class="chat-card mx-auto">
             <div class="chat-head d-flex align-items-center gap-3">
-                <!-- <div class="chat-dp">
-                    <img src="{{ auth()->user()->pfp
-                                        ? asset('storage/' . auth()->user()->pfp)
+                <div class="chat-dp">
+                    <img src="{{ $chatUser->pfp
+                                        ? asset('storage/' . $chatUser->pfp)
                                         : asset('images/20180125_001_1_.jpg') }}"
                                     alt="Profile Picture" alt="">
                 </div>
                 <div class="chat-name">
-                    <h2>{{ auth()->user()->name }}</h2>
-                </div> -->
+                    <h2>{{ $chatUser->name }}</h2>
+                </div>
             </div>
             <div id="chat-box" style="border:1px solid #ccc; padding:15px; height:400px; overflow-y:scroll;">
                 <!-- Messages load here -->
@@ -69,10 +69,10 @@ $(document).ready(function(){
             data.forEach(function(message){
                 html += `
                     <div style="margin-bottom:10px;" class="${message.created_by == therapist ? 'Therapist' : 'Patient'}">
-                        <strong>${message.created_by == therapist ? 'Therapist' : 'Patient'}:</strong>
+                        <strong>${message.created_by == therapist ? message.therapist_name : message.patient_name}:</strong>
                         ${message.chat_content}
                         <br>
-                        <small>${message.created_at}</small>
+                        <!--<small>${message.created_at}</small>-->
                     </div>
                 `;
             });

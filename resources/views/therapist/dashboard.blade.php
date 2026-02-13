@@ -21,7 +21,10 @@
                       <div class="upper ">
                           <div class="active">
                               <div class="dp">
-                                  <img src="images\20180125_001_1_.jpg">
+                                  <img src="{{ $requests->patient_pic
+                                        ? asset('storage/' . $requests->patient_pic)
+                                        : asset('images/20180125_001_1_.jpg') }}"
+                                    alt="Profile Picture" alt="">
                               </div>
                               
                           </div>
@@ -81,7 +84,8 @@
                               </div>
                       </div>
                       <div class="accept-btn d-flex justify-content-between align-items-center">
-                        <div class="button-control"><button class="btn btn-dark">Message</button></div>
+                        <div class="button-control"><button class="btn btn-dark">
+                            <a href="{{ route('chat.index', ['therapist' => $userId, 'patient' => $requests->patient_id]) }}" class="text-white text-decoration-none">Message</a></button></div>
                         
                         <form action="{{ route('appointments.modify') }}" method="POST">
                             @csrf       

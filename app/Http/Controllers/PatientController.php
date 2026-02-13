@@ -67,8 +67,10 @@ class PatientController extends Controller
          $userId = Auth::id();
         $currentTherapists = User::where('role', 'therapist')->where('active', true)->where('id', $id)->get();
         $allAppointments = Appointments::where('therapist_id', $id)->where('patient_id', $userId)->orderBy('created_at', 'desc')->get();
-       // echo '<pre>';print_r($currentTherapists);
-        return view('patient.book',compact('currentTherapists','id','allAppointments'));
+        $latestAppointments = Appointments::where('therapist_id', $id)->where('patient_id', $userId)->orderBy('created_at', 'desc')->first();
+        //echo '<pre>';print_r($latestAppointments);exit;
+        $latestAppointmentscount = $latestAppointments ? 1 : 0;
+        return view('patient.book',compact('currentTherapists','id','allAppointments', 'userId', 'latestAppointments', 'latestAppointmentscount'));
     }
     
 }
