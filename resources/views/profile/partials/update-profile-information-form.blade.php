@@ -23,19 +23,7 @@
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
-        <div class="mb-2">
-            <x-input-label for="phone" :value="__('Phone')" />
-            <x-text-input id="phone" name="phone" type="text" class="form-control" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
-            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
-        </div>
-
-        <div class="mb-2">
-            <x-input-label for="altphone" :value="__('Alternate Phone')" />
-            <x-text-input id="altphone" name="altphone" type="text" class="form-control" :value="old('altphone', $user->altphone)" required autofocus autocomplete="altphone" />
-            <x-input-error class="mt-2" :messages="$errors->get('altphone')" />
-        </div>
-        
-        <div class="mb-2">
+         <div class="mb-2">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="form-control" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
@@ -58,6 +46,26 @@
                 </div>
             @endif
         </div>
+
+        <div class="mb-2">
+            <x-input-label for="phone" :value="__('Phone')" />
+            <x-text-input id="phone" name="phone" type="text" class="form-control" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
+
+        <div class="mb-2">
+            <x-input-label for="altphone" :value="__('Alternate Phone')" />
+            <x-text-input id="altphone" name="altphone" type="text" class="form-control" :value="old('altphone', $user->altphone)" required autofocus autocomplete="altphone" />
+            <x-input-error class="mt-2" :messages="$errors->get('altphone')" />
+        </div>
+
+        <div class="mb-2">
+            <x-input-label for="location" :value="__('Location')" />
+            <x-text-input id="location" name="location" type="text" class="form-control" :value="old('location', $user->location)" required autofocus autocomplete="location" />
+            <x-input-error class="mt-2" :messages="$errors->get('location')" />
+        </div>
+        
+       
 
         <div class="flex items-center gap-4">
             <button type="submit" class="btn-primary rounded-pill mt-4">Submit</button>
