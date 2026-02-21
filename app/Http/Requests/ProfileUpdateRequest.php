@@ -20,6 +20,7 @@ class ProfileUpdateRequest extends FormRequest
             'phone' => ['required', 'string', 'max:255'],
             'altphone' => ['required', 'string', 'max:255'],
             'location' => ['required', 'string', 'max:255'],
+              'pfp'   => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'email' => [
                 'required',
                 'string',

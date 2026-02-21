@@ -31,6 +31,10 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+         if ($request->hasFile('pfp')) {
+                $path = $request->file('pfp')->store('pfps', 'public');
+                $request->user()->pfp = $path;
+            }
 
         $request->user()->save();
 
